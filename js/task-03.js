@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//Отримуємо посилання на ul елемент з класом gallery:
+
+const gallery = document.querySelector('ul.gallery');
+
+// Створюємо розмітку галереї перебираючим методом map який перетворить масив images
+// на масив listGallery використовуючи шаблонні рядки і методом join() -
+//  об'єднуємо елементи масиву у рядок
+
+const listGallery = images.map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`).join("");
+
+// далі додаємо створені елементи в HTML розмітку
+
+gallery.insertAdjacentHTML("beforeend", listGallery);

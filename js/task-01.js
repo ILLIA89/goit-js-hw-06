@@ -11,11 +11,11 @@ itemsEl.forEach(function (itemEL) {
 console.log(`Number of categories: ${categoryNumbers}`);
 
 const categoriesList = document.querySelector('ul#categories');
-const categoryItems = document.querySelectorAll('li.item');
+const categoryItems = Array.from(categoriesList.children);
 
 categoryItems.forEach(function (item) {
-    const category = item.querySelector('h2').textContent;
-    const amountElement = item.querySelectorAll('li').length;
+    const category = item.firstElementChild.textContent;
+    const amountElement = item.lastElementChild.children.length;
     console.log(`Category: ${category}`);
     console.log(`Elements: ${amountElement}`);
 

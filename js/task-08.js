@@ -32,7 +32,7 @@ function handleSubmit(event) {
     const emailValue = emailForm.value.trim();
     const passwordValue = passwordForm.value.trim();
 
-    if (emailForm === '' || passwordForm === '') {
+    if (emailValue === '' || passwordValue === '') {
         alert(`Пусті поля не допустимі`);
         return;
     }
